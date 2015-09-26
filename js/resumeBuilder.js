@@ -77,8 +77,8 @@ var bio={
   "bioPic":"images/fry.jpg"
 };
 
-        var sEmail= HTMLemail.replace("%data%".bio.contacts.email);
-        $("#topContacts").append(sEmail);
+     /*   var sEmail= HTMLemail.replace("%data%".bio.contacts.email);
+        $("#topContacts").append(sEmail);*/
 
 bio.display =function()
     {
