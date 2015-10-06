@@ -25,8 +25,9 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
-  color: #f5a623;
+  font-size: 30px;
+  /*color: #f5a623;*/
+  color:#FF7F24;
   line-height: 48px;
   display: inline;
 }
@@ -76,6 +77,7 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
+  padding-right: 10px;
 
 }
 
@@ -94,8 +96,11 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
+  font-size: 20px;
+
+  /*color: #f3f3f3;*/
+  color:#CDC9C9;
+  font-weight: bold;
   line-height: 28px;
 }
 
@@ -129,7 +134,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #104E8B;
+  /*background-color: #484848;*/
 }
 
 .flex-box {

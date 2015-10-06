@@ -5,18 +5,18 @@ var education={
       "name":"ESPE",
       "location":"Quito/Ecuador",
       "degree":"BA",
-      "majors":"CS",
+      "majors":"Computer Science",
       "dates":1994,
       "url":"http://www.espe.edu.ec/"
 
     },
     {
-      "name":"test2",
-      "location":"Reston, VA",
-      "degree":"BA",
-      "majors":"CS",
+      "name":"LCC RF Design",
+      "location":"Seven Corners, VA",
+      "degree":"RF Certification",
+      "majors":"RAN RF Design",
       "dates":2000,
-      "url":"http://www.google.com"
+      "url":"http://www.lcc.com"
     }
   ],
   "onlineCourses":[
@@ -30,7 +30,7 @@ var education={
       "title":"C++",
       "school":"Online",
       "dates":2015,
-      "url":"http://www.google.com"
+      "url":"http://www.neisd.net"
     } 
     ]
 }
@@ -40,23 +40,23 @@ var work={
   {
     "employer":"Porta",
     "title":"RF Manager",
-    "location":"Chicago",
+    "location":"Quito Ecuador",
     "dates":"07/1994 - 05/2000",
-    "description":"RF Manager Network"
+    "description":"RF Manager Network for North part of country encharge of overall RF RAN Performance"
   },
   {
     "employer":"LCC",
     "title":"RF Engineerr",
-    "location":"Cincinnati",
+    "location":"Cincinnati, OH",
     "dates":"05/2000 - 01/2002",
-    "description":"RF Manager Network"
+    "description":"RF Planning Engineer encharged of RF Design for XM Radio Terrestrial Network Design and optimization"
   },
   {
-    "employer":"AT&T",
+    "employer":"AT&T Mobility",
     "title":"RF Engineerr",
-    "location":"San Antonio",
-    "dates":"01/2000 - Present",
-    "description":"RAN Planning Engineer"
+    "location":"San Antonio, TX",
+    "dates":"01/2002 - Present",
+    "description":"RAN Planning Engineer main roll include to look for Long Term Planning Network opportunities to improve Network Performance"
   }
   ]
 }
@@ -65,22 +65,22 @@ var projects={
   "projects":[
     {
       "title":"Project 1",
-      "dates":"2014",
-      "description":"Test description",
+      "dates":"2015",
+      "description":"South Texas AT&T Mobility with three major cities as Houston, San Antonio RAN Optimization and Asutin and Planning using multiple prediction and GEO location tools to assest new potential locations and evalute existing node to improve service and capacity related forecast volumes",
       "images":
         [
-          "images/197x148.gif",
-          "images/197x148.gif"
+          "images/img1_v1.jpg",
+          "images/img2_v1.jpg"
         ]        
     },
     {
       "title":"Project 2",
       "dates":"2015",
-      "description":"Test description",
+      "description":"Drive Test ananlysis for WCDMA (3G) and LTE (4G) using multiple sources and competitor comparison to locate areas where service can be improve with multiple RF design recommendations",
       "images":
         [
-          "images/197x148.gif",
-          "images/197x148.gif"
+          "images/img2_1_v1.jpg",
+          "images/img2_2_v1.jpg"
         ]        
     
     }
@@ -97,9 +97,9 @@ var bio={
     "twitter":"@icisner",
     "location":"San Antonio"
      },
-  "WelcomeMessage":"Test message there is one circle",
-  "skills":["awesomeness","programming","teaching","JS"],
-  "bioPic":"images/fry.jpg"
+  "WelcomeMessage":"RF Engineering with Computer Science skills",
+  "skills":["RF RAN Planning","Programming","RF Tools","RF Drive Test tools"],
+  "bioPic":"images/Ivan_315.jpg"
 };
 
      
@@ -129,7 +129,7 @@ bio.display =function()
 
         for (i in bio.skills)
         {
-          var sK=HTMLskills.replace("%data",bio.skills[i]);
+          var sK=HTMLskills.replace("%data%",bio.skills[i]);
           $('#header').append(sK);
 
         }
@@ -150,7 +150,10 @@ work.display = function()
 
         var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
         $(".work-entry:last").append(formattedDates);
-
+        
+        var formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
+        $(".work-entry:last").append(formattedLocation);
+        
         var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
       }
@@ -197,14 +200,17 @@ projects.display = function ()
               $(".education-entry:last").append(sLocation);
               var sMajor=HTMLschoolMajor.replace("%data%",education.schools[j].majors);
               $(".education-entry:last").append(sMajor);
+              
       }
+    
+      
+      $("#education").append(HTMLonlineClasses); 
+      $("#education").append(HTMLschoolStart);
 
-$("#education").append(HTMLonlineClasses);
+  
       for (k in education.onlineCourses)
       {
-
-      
-
+                
               var sOTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[k].title);
               $(".education-entry:last").append(sOTitle);
               var sOSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[k].school);
@@ -213,7 +219,7 @@ $("#education").append(HTMLonlineClasses);
               $(".education-entry:last").append(sODates);
               var sOUrl=HTMLonlineURL.replace("%data%",education.onlineCourses[k].url);
               $(".education-entry:last").append(sOUrl);
-
+              
       }
 
    }
