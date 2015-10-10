@@ -178,7 +178,7 @@ function initializeMap() {
           // your code goes here!
     // console.log(name); 
 
-  function openinfo(infoin){
+  function openinfo(){
  var infoWindow = new google.maps.InfoWindow({
       content: name
 
