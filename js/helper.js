@@ -142,6 +142,7 @@ function initializeMap() {
     return locations;
   }
 
+
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
@@ -159,7 +160,8 @@ function initializeMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      infoWindow: infoWindow,
     });
 
     // infoWindows are the little helper windows that open when you click
@@ -167,12 +169,23 @@ function initializeMap() {
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
       content: name
+
     });
 
+
     // hmmmm, I wonder what this is about...
-    google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+    google.maps.event.addListener(marker, 'click', openinfo);
+          // your code goes here!
+    // console.log(name); 
+
+  function openinfo(infoin){
+ var infoWindow = new google.maps.InfoWindow({
+      content: name
+
     });
+  
+  infoWindow.open(map,this);
+}          
 
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
@@ -182,6 +195,8 @@ function initializeMap() {
     // center the map
     map.setCenter(bounds.getCenter());
   }
+
+
 
   /*
   callback(results, status) makes sure the search returned results for a location.
@@ -240,5 +255,6 @@ window.addEventListener('load', initializeMap);
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
 //Make sure the map bounds get updated on page resize
+
   map.fitBounds(mapBounds);
 });
