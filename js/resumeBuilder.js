@@ -111,16 +111,26 @@ bio.display =function()
         $("#header").prepend(sName);
         var pic=HTMLbioPic.replace("%data%",bio.bioPic);
         $("#header").append(pic);
+        
         var nMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
         $("#topContacts").append(nMobile);
+        $("#footerContacts").append(nMobile);
+
         var sEmail= HTMLemail.replace("%data%",bio.contacts.email);
         $("#topContacts").append(sEmail);
+        $("#footerContacts").append(sEmail);
+        
         var sGitHub= HTMLgithub.replace("%data%",bio.contacts.github);
         $("#topContacts").append(sGitHub); 
+        $("#footerContacts").append(sGitHub); 
+
         var sTwitter= HTMLtwitter.replace("%data%",bio.contacts.twitter);
-        $("#topContacts").append(sTwitter);
+        $("#topContacts").append(sTwitter);       
+        $("#footerContacts").append(sTwitter);
+        
         var sLocation= HTMLlocation.replace("%data%",bio.contacts.location);
         $("#topContacts").append(sLocation);
+        $("#footerContacts").append(sLocation);
         
         var sMsg= HTMLwelcomeMsg.replace("%data%",bio.WelcomeMessage);
         $("#header").append(sMsg);
